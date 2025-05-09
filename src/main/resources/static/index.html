@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>나만의 웹 알리미</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1>나만의 웹 알리미</h1>
+</header>
+
+<main>
+  <section id="crawler-config-section">
+    <h2>크롤러 설정</h2>
+    <form id="crawler-form">
+      <input type="hidden" id="crawler-id" name="id">
+      <div>
+        <label for="url">웹사이트 URL:</label>
+        <input type="url" id="url" name="url" placeholder="https://example.com/product/123" required>
+      </div>
+      <div>
+        <label for="selector">정보 선택자 (CSS Selector):</label>
+        <input type="text" id="selector" name="selector" placeholder="#price 또는 .product_name" required>
+        <small>가격, 제목 등 원하는 정보가 있는 HTML 요소의 CSS 선택자를 입력하세요.</small>
+      </div>
+      <div>
+        <label for="check-interval">확인 주기:</label>
+        <select id="check-interval" name="checkInterval">
+          <option value="300000">5분마다</option>
+          <option value="600000" selected>10분마다</option>
+          <option value="1800000">30분마다</option>
+          <option value="3600000">1시간마다</option>
+          <option value="86400000">매일 (자정)</option>
+        </select>
+      </div>
+      <div>
+        <label for="alert-keyword">알림 키워드 (포함 시 알림):</label>
+        <input type="text" id="alert-keyword" name="alertKeyword" placeholder="품절, 할인 시작">
+        <small>크롤링한 텍스트에 이 키워드가 포함되면 알림을 받습니다.</small>
+      </div>
+      <div class="checkbox-group">
+        <input type="checkbox" id="alert-on-change" name="alertOnChange">
+        <label for="alert-on-change">내용 변경 시 알림</label>
+        <small>이전에 크롤링한 내용과 현재 내용이 다를 경우 알림을 받습니다.</small>
+      </div>
+      <div>
+        <label for="email">알림 받을 이메일:</label>
+        <input type="email" id="email" name="email" placeholder="your_email@example.com" required>
+      </div>
+      <button type="submit" id="submit-button">새 크롤러 등록하기</button>
+      <button type="button" id="cancel-edit-button" style="display:none;">취소</button>
+    </form>
+  </section>
+
+  <section id="registered-crawlers-section">
+    <h2>등록된 크롤러 목록</h2>
+    <table id="crawlers-table">
+      <thead>
+      <tr>
+        <th>No.</th>
+        <th>대상 URL</th>
+        <th>선택자</th>
+        <th>주기</th>
+        <th>알림 조건</th>
+        <th>상태</th>
+        <th>최근 값</th>
+        <th>액션</th>
+      </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <p id="no-crawlers-message" style="display:none;">등록된 크롤러가 없습니다. 위에서 새 크롤러를 등록해주세요.</p>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 나의 웹 알리미. All Rights Reserved.</p>
+</footer>
+
+<div id="log-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h3>크롤러 로그</h3>
+    <pre id="log-content"></pre>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

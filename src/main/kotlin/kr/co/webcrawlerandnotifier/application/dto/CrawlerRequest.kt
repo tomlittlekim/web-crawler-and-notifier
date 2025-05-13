@@ -16,7 +16,7 @@ data class CreateCrawlerRequest(
 
     @field:NotNull(message = "확인 주기는 필수입니다.")
     @field:Min(value = 60000, message = "확인 주기는 최소 1분(60000ms) 이상이어야 합니다.") // 최소 1분
-    val checkIntervalMs: Long,
+    val checkInterval: Long, // <--- 필드명을 checkInterval로 변경
 
     val alertKeyword: String?,
 
@@ -37,7 +37,7 @@ data class UpdateCrawlerRequest(
 
     @field:NotNull(message = "확인 주기는 필수입니다.")
     @field:Min(value = 60000, message = "확인 주기는 최소 1분(60000ms) 이상이어야 합니다.")
-    val checkIntervalMs: Long,
+    val checkInterval: Long, // <--- 필드명을 checkInterval로 변경
 
     val alertKeyword: String?,
 

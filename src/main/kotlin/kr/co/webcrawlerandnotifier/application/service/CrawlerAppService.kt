@@ -29,7 +29,7 @@ class CrawlerAppService(
         val crawler = Crawler(
             url = request.url,
             selector = request.selector,
-            checkIntervalMs = request.checkIntervalMs,
+            checkIntervalMs = request.checkInterval,
             alertKeyword = request.alertKeyword,
             alertOnChange = request.alertOnChange,
             email = request.email,
@@ -60,7 +60,7 @@ class CrawlerAppService(
         crawler.updateDetails(
             url = request.url,
             selector = request.selector,
-            checkIntervalMs = request.checkIntervalMs,
+            checkIntervalMs = request.checkInterval,
             alertKeyword = request.alertKeyword,
             alertOnChange = request.alertOnChange,
             email = request.email

@@ -42,10 +42,10 @@
 1.  **백엔드 실행:**
     * IDE (IntelliJ 등)에서 `WebCrawlerAndNotifierApplication.kt` 파일을 직접 실행합니다.
     * 또는 터미널에서 `./gradlew bootRun` (또는 `gradlew.bat bootRun`) 명령어를 실행합니다.
-    * 기본 포트는 `8080` 입니다. (필요시 `application.properties`에서 변경 가능)
+    * 기본 포트는 `8757` 입니다. (필요시 `application.properties`에서 변경 가능)
 
 2.  **프론트엔드 접속:**
-    * 웹 브라우저에서 `http://localhost:8080/` (또는 `static/index.html`이 제공되는 경로)으로 접속합니다.
+    * 웹 브라우저에서 `http://localhost:8757/` (또는 `static/index.html`이 제공되는 경로)으로 접속합니다.
 
 ## API 엔드포인트 (예상)
 

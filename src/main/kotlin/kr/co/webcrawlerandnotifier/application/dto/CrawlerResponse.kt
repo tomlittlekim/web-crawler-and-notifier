@@ -2,6 +2,7 @@ package kr.co.webcrawlerandnotifier.application.dto
 
 import kr.co.webcrawlerandnotifier.domain.model.crawler.Crawler
 import kr.co.webcrawlerandnotifier.domain.model.crawler.CrawlerStatus
+import kr.co.webcrawlerandnotifier.domain.model.crawler.NotificationType
 import java.time.LocalDateTime
 import java.util.UUID
 
@@ -12,7 +13,9 @@ data class CrawlerResponse(
     val checkInterval: Long,
     val alertKeyword: String?,
     val alertOnChange: Boolean,
-    val email: String,
+    val email: String?,
+    val notificationType: NotificationType,
+    val slackChannelId: String?,
     val status: CrawlerStatus,
     val lastCrawledValue: String?,
     val lastCheckedAt: LocalDateTime?,
@@ -30,6 +33,8 @@ data class CrawlerResponse(
                 alertKeyword = crawler.alertKeyword,
                 alertOnChange = crawler.alertOnChange,
                 email = crawler.email,
+                notificationType = crawler.notificationType,
+                slackChannelId = crawler.slackChannelId,
                 status = crawler.status,
                 lastCrawledValue = crawler.lastCrawledValue,
                 lastCheckedAt = crawler.lastCheckedAt,

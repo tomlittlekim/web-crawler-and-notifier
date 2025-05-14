@@ -5,7 +5,7 @@ import org.springframework.mail.SimpleMailMessage
 import org.springframework.mail.javamail.JavaMailSender
 import org.springframework.stereotype.Service
 
-@Service // 인터페이스로 만들고 구현체로 분리하는 것이 DDD에 더 적합
+@Service("emailNotificationService") // 인터페이스로 만들고 구현체로 분리하는 것이 DDD에 더 적합
 class EmailNotificationService(
     private val mailSender: JavaMailSender,
     @Value("\${spring.mail.username}") private val senderEmail: String

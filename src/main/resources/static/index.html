@@ -47,7 +47,21 @@
       </div>
       <div>
         <label for="email">알림 받을 이메일:</label>
-        <input type="email" id="email" name="email" placeholder="your_email@example.com" required>
+        <input type="email" id="email" name="email" placeholder="your_email@example.com">
+        <small>알림 유형이 EMAIL 또는 BOTH일 경우 필수입니다.</small>
+      </div>
+      <div>
+        <label for="notification-type">알림 유형:</label>
+        <select id="notification-type" name="notificationType">
+          <option value="EMAIL" selected>이메일만</option>
+          <option value="SLACK">Slack만</option>
+          <option value="BOTH">이메일과 Slack 모두</option>
+        </select>
+      </div>
+      <div id="slack-channel-id-group" style="display:none;">
+        <label for="slack-channel-id">Slack 채널 ID:</label>
+        <input type="text" id="slack-channel-id" name="slackChannelId" placeholder="C1234567890">
+        <small>알림 유형이 SLACK 또는 BOTH일 경우 필수입니다. (예: C1234567890)</small>
       </div>
       <button type="submit" id="submit-button">새 크롤러 등록하기</button>
       <button type="button" id="cancel-edit-button" style="display:none;">취소</button>
@@ -64,6 +78,8 @@
         <th>선택자</th>
         <th>주기</th>
         <th>알림 조건</th>
+        <th>알림 유형</th>
+        <th>Slack 채널</th>
         <th>상태</th>
         <th>최근 값</th>
         <th class="action-buttons-header">액션</th>

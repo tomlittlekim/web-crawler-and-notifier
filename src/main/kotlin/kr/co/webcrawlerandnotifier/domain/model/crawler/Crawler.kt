@@ -28,6 +28,12 @@ data class Crawler(
     var email: String,
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "notification_type", nullable = false)
+    var notificationType: NotificationType = NotificationType.EMAIL, // 기본값 EMAIL
+
+    var slackChannelId: String? = null, // Slack 알림 시 사용될 채널 ID
+
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     var status: CrawlerStatus = CrawlerStatus.PENDING,
 
@@ -48,7 +54,9 @@ data class Crawler(
         checkIntervalMs: Long,
         alertKeyword: String?,
         alertOnChange: Boolean,
-        email: String
+        email: String,
+        notificationType: NotificationType, // 파라미터 추가
+        slackChannelId: String? // 파라미터 추가
     ) {
         this.url = url
         this.selector = selector
@@ -56,6 +64,8 @@ data class Crawler(
         this.alertKeyword = alertKeyword
         this.alertOnChange = alertOnChange
         this.email = email
+        this.notificationType = notificationType // 추가
+        this.slackChannelId = slackChannelId // 추가
         this.updatedAt = LocalDateTime.now()
     }
 

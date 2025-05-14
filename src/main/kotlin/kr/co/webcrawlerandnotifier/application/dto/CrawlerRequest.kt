@@ -4,6 +4,7 @@ import jakarta.validation.constraints.Email
 import jakarta.validation.constraints.Min
 import jakarta.validation.constraints.NotBlank
 import jakarta.validation.constraints.NotNull
+import kr.co.webcrawlerandnotifier.domain.model.crawler.NotificationType
 import org.hibernate.validator.constraints.URL
 
 data class CreateCrawlerRequest(
@@ -22,9 +23,15 @@ data class CreateCrawlerRequest(
 
     val alertOnChange: Boolean = false,
 
-    @field:NotBlank(message = "이메일은 필수입니다.")
+    // email은 notificationType이 EMAIL 또는 BOTH일 때만 필수, SLACK일 때는 선택.
+    // 복잡한 유효성 검사는 @AssertTrue를 사용한 커스텀 validation 메서드로 구현 가능
     @field:Email(message = "유효한 이메일 형식이어야 합니다.")
-    val email: String
+    val email: String?, // Slack만 사용할 경우 null 가능하도록 변경
+
+    @field:NotNull(message = "알림 유형은 필수입니다.")
+    val notificationType: NotificationType = NotificationType.EMAIL,
+
+    val slackChannelId: String? // notificationType이 SLACK 또는 BOTH일 때 필요
 )
 
 data class UpdateCrawlerRequest(
@@ -43,7 +50,11 @@ data class UpdateCrawlerRequest(
 
     val alertOnChange: Boolean = false,
 
-    @field:NotBlank(message = "이메일은 필수입니다.")
     @field:Email(message = "유효한 이메일 형식이어야 합니다.")
-    val email: String
+    val email: String?, // Slack만 사용할 경우 null 가능하도록 변경
+
+    @field:NotNull(message = "알림 유형은 필수입니다.")
+    val notificationType: NotificationType,
+
+    val slackChannelId: String?
 )

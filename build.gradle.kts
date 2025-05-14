@@ -38,6 +38,9 @@ dependencies {
     // Web Crawling
     implementation("org.jsoup:jsoup:1.17.2") // Jsoup HTML 파서
 
+    // Slack
+    implementation("com.slack.api:slack-api-client:1.45.3")
+
     // Test
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")

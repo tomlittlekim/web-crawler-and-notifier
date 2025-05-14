@@ -51,24 +51,15 @@ class CrawlerController(private val crawlerAppService: CrawlerAppService) {
         return ResponseEntity.ok(crawlerAppService.getCrawlerLogs(id))
     }
 
-    // 크롤러 상태 변경 API (활성/비활성) - 필요시 추가
     @PutMapping("/{id}/activate")
     fun activateCrawler(@PathVariable id: UUID): ResponseEntity<CrawlerResponse> {
-        // TODO: CrawlerAppService에 로직 구현
-        // val crawler = crawlerRepository.findById(id).orElseThrow { CrawlerNotFoundException(id) }
-        // crawler.activate()
-        // crawlerRepository.save(crawler)
-        // return ResponseEntity.ok(CrawlerResponse.fromEntity(crawler))
-        throw NotImplementedError("activateCrawler API is not implemented yet.")
+        val crawlerResponse = crawlerAppService.activateCrawler(id)
+        return ResponseEntity.ok(crawlerResponse)
     }
 
     @PutMapping("/{id}/deactivate")
     fun deactivateCrawler(@PathVariable id: UUID): ResponseEntity<CrawlerResponse> {
-        // TODO: CrawlerAppService에 로직 구현
-        // val crawler = crawlerRepository.findById(id).orElseThrow { CrawlerNotFoundException(id) }
-        // crawler.deactivate()
-        // crawlerRepository.save(crawler)
-        // return ResponseEntity.ok(CrawlerResponse.fromEntity(crawler))
-        throw NotImplementedError("deactivateCrawler API is not implemented yet.")
+        val crawlerResponse = crawlerAppService.deactivateCrawler(id)
+        return ResponseEntity.ok(crawlerResponse)
     }
 }

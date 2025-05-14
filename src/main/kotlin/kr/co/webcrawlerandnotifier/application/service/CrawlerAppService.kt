@@ -171,4 +171,25 @@ class CrawlerAppService(
             CrawlLogResponse(it.id, it.crawledAt, it.crawledValue, it.success, it.errorMessage, it.notificationSent)
         }
     }
+
+    @Transactional
+    fun activateCrawler(id: UUID): CrawlerResponse {
+        val crawler = crawlerRepository.findById(id)
+            .orElseThrow { CrawlerNotFoundException(id) }
+        crawler.activate()
+        val savedCrawler = crawlerRepository.save(crawler)
+        logger.info("Crawler activated: id=${savedCrawler.id}")
+        return CrawlerResponse.fromEntity(savedCrawler)
+    }
+
+    @Transactional
+    fun deactivateCrawler(id: UUID): CrawlerResponse {
+        val crawler = crawlerRepository.findById(id)
+            .orElseThrow { CrawlerNotFoundException(id) }
+        crawler.deactivate()
+        val savedCrawler = crawlerRepository.save(crawler)
+        logger.info("Crawler deactivated: id=${savedCrawler.id}")
+        return CrawlerResponse.fromEntity(savedCrawler)
+    }
+
 }

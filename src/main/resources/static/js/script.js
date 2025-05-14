@@ -118,20 +118,20 @@ document.addEventListener('DOMContentLoaded', () => {
         <td>${index + 1}</td>
         <td>${crawler.url}</td>
         <td>${crawler.selector}</td>
-        <td>${crawler.checkInterval / 1000} 초</td>
+        <td>${Math.floor(crawler.checkInterval / 60000)} 분</td>
         <td>${alertConditionText}</td>
         <td><span class="status-${crawler.status.toLowerCase()}">${statusText}</span></td>
         <td>${crawler.lastCrawledValue || '-'}</td>
-        <td class="actions">
-            <button class="edit-btn">수정</button>
-            <button class="delete-btn">삭제</button>
-            <button class="check-now-btn">지금 확인</button>
-            <button class="view-logs-btn">로그 보기</button>
+        <td class="action-buttons">
+            <button class="edit-btn action-button-edit">수정</button>
+            <button class="delete-btn action-button-delete">삭제</button>
+            <button class="check-now-btn action-button-check">지금 확인</button>
+            <button class="view-logs-btn action-button-log">로그 보기</button>
             ${ (crawler.status === 'INACTIVE' || crawler.status === 'ERROR')
-              ? `<button class="activate-btn">활성화</button>`
+              ? `<button class="activate-btn action-button-activate">활성화</button>`
               : '' }
             ${ (crawler.status === 'ACTIVE')
-              ? `<button class="deactivate-btn">비활성화</button>`
+              ? `<button class="deactivate-btn action-button-deactivate">비활성화</button>`
               : '' }
         </td>
       `;

@@ -213,14 +213,21 @@ document.addEventListener('DOMContentLoaded', () => {
   async function handleShowLog(event) {
     const id = event.target.dataset.id;
     try {
-      // 실제 API 엔드포인트는 백엔드에 맞게 조정해야 합니다.
-      // 여기서는 간단히 "로그를 가져오는 중..." 메시지만 표시합니다.
-      // const response = await fetch(`${API_BASE_URL}/${id}/logs`);
-      // if (!response.ok) throw new Error('Failed to fetch logs.');
-      // const logs = await response.json(); // 또는 text()
-      // logContent.textContent = JSON.stringify(logs, null, 2); // 예시
+      const response = await fetch(`${API_BASE_URL}/${id}/logs`);
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({ message: 'Failed to fetch logs.' }));
+        throw new Error(`HTTP error! status: ${response.status}, message: ${errorData.message || response.statusText}`);
+      }
 
-      logContent.textContent = `ID: ${id} 크롤러의 로그를 가져오는 기능은 백엔드 API 구현 후 연동 예정입니다.\n(임시 로그) ${new Date().toLocaleString()}: 로그 확인 요청`;
+      const logs = await response.json();
+
+      if (logs && logs.length > 0) {
+        logContent.textContent = logs.map(log =>
+            `[${new Date(log.crawledAt).toLocaleString()}] ${log.success ? '성공' : '실패'} - 값: ${log.crawledValue || 'N/A'}${log.errorMessage ? ` (에러: ${log.errorMessage})` : ''}${log.notificationSent ? ' - 알림 발송됨' : ''}`
+        ).join('\n');
+      } else {
+        logContent.textContent = '해당 크롤러에 대한 로그가 없습니다.';
+      }
       logModal.style.display = 'block';
     } catch (error) {
       console.error('Error fetching logs:', error);

@@ -10,11 +10,14 @@ import kr.co.webcrawlerandnotifier.domain.repository.CrawlLogRepository
 import kr.co.webcrawlerandnotifier.domain.repository.CrawlerRepository
 import kr.co.webcrawlerandnotifier.infrastructure.crawling.WebCrawlerService
 import kr.co.webcrawlerandnotifier.infrastructure.notification.NotificationService
+import kr.co.webcrawlerandnotifier.application.statistics.StatisticsService
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import java.time.LocalDateTime
+import java.time.Duration
+import java.time.Instant
 import java.util.UUID
 
 @Service
@@ -23,7 +26,8 @@ class CrawlerAppService(
     private val crawlLogRepository: CrawlLogRepository,
     private val webCrawlerService: WebCrawlerService,
     @Qualifier("emailNotificationService") private val emailNotificationService: NotificationService,
-    @Qualifier("slackNotificationService") private val slackNotificationService: NotificationService? = null
+    @Qualifier("slackNotificationService") private val slackNotificationService: NotificationService? = null,
+    private val statisticsService: StatisticsService
 ) {
     private val logger = LoggerFactory.getLogger(CrawlerAppService::class.java)
 
@@ -129,11 +133,22 @@ class CrawlerAppService(
         var crawledValue: String? = null
         var errorMessage: String? = null
         var notificationSent = false
+        val startTime = Instant.now()
+        var durationMsCrawl: Long = 0
 
         try {
             crawledValue = webCrawlerService.crawl(crawler.url, crawler.selector)
             success = true
-            logger.info("Crawled successfully: id=${crawler.id}, url=${crawler.url}, value=$crawledValue")
+            durationMsCrawl = Duration.between(startTime, Instant.now()).toMillis()
+            logger.info("Crawled successfully: id=${crawler.id}, url=${crawler.url}, value=$crawledValue, durationMs=$durationMsCrawl")
+
+            statisticsService.recordEvent(
+                eventType = "CRAWL_ATTEMPT",
+                targetUrl = crawler.url,
+                durationMs = durationMsCrawl,
+                isSuccess = true,
+                details = "Crawled value: ${crawledValue?.take(200)}"
+            )
 
             val previousValue = crawler.lastCrawledValue
             crawler.updateCrawledData(crawledValue)
@@ -143,7 +158,7 @@ class CrawlerAppService(
 
             if (crawler.alertOnChange && previousValue != crawledValue) {
                 shouldNotify = true
-                notificationReason.add("내용 변경됨 (이전: '$previousValue', 현재: '$crawledValue')")
+                notificationReason.add("내용 변경됨 (이전: '${previousValue?.take(50)}', 현재: '${crawledValue?.take(50)}')")
             }
             if (!crawler.alertKeyword.isNullOrBlank() && crawledValue?.contains(crawler.alertKeyword!!, ignoreCase = true) == true) {
                 shouldNotify = true
@@ -169,13 +184,26 @@ class CrawlerAppService(
 
                 if (crawler.notificationType == NotificationType.EMAIL || crawler.notificationType == NotificationType.BOTH) {
                     if (crawler.email.isNotBlank()) {
+                        val emailNotificationStartTime = Instant.now()
+                        var emailSuccess = false
+                        var emailErrorDetails: String? = null
                         try {
                             emailNotificationService.sendNotification(crawler.email, subject, textBody)
                             emailSent = true
+                            emailSuccess = true
                             logger.info("Email notification sent for crawler id: ${crawler.id} to ${crawler.email}")
                         } catch (e: Exception) {
                             logger.error("Failed to send email notification for crawler id: ${crawler.id}", e)
+                            emailErrorDetails = e.message?.take(200)
                         }
+                        val durationMsEmail = Duration.between(emailNotificationStartTime, Instant.now()).toMillis()
+                        statisticsService.recordEvent(
+                            eventType = "EMAIL_NOTIFICATION_ATTEMPT",
+                            targetUrl = crawler.email,
+                            durationMs = durationMsEmail,
+                            isSuccess = emailSuccess,
+                            details = if(emailSuccess) "Subject: ${subject.take(100)}" else "Error: $emailErrorDetails"
+                        )
                     } else {
                         logger.warn("Email address is blank for crawler id: ${crawler.id}, notification type: ${crawler.notificationType}. Skipping email notification.")
                     }
@@ -184,7 +212,15 @@ class CrawlerAppService(
                 if (crawler.notificationType == NotificationType.SLACK || crawler.notificationType == NotificationType.BOTH) {
                     if (slackNotificationService == null) {
                         logger.warn("SlackNotificationService is not available (slack.bot.token may not be configured). Skipping Slack notification for crawler id: ${crawler.id}")
+                        statisticsService.recordEvent(
+                            eventType = "SLACK_NOTIFICATION_ATTEMPT",
+                            targetUrl = crawler.slackChannelId,
+                            durationMs = 0,
+                            isSuccess = false,
+                            details = "SlackNotificationService not available (token missing?)"
+                        )
                     } else if (!crawler.slackChannelId.isNullOrBlank()) {
+                        val slackNotificationStartTime = Instant.now()
                         val slackMessageBody = """
                             URL: `${crawler.url}`
                             CSS Selector: `${crawler.selector}`
@@ -192,26 +228,54 @@ class CrawlerAppService(
                             변경 사유: `${notificationReason.joinToString(", ")}`
                             확인 시간: `${LocalDateTime.now()}`
                         """.trimIndent()
+                        var slackSuccess = false
+                        var slackErrorDetails: String? = null
                         try {
                             slackNotificationService.sendNotification(crawler.slackChannelId!!, subject, slackMessageBody)
                             slackSent = true
+                            slackSuccess = true
                             logger.info("Slack notification sent for crawler id: ${crawler.id} to channel ${crawler.slackChannelId}")
                         } catch (e: Exception) {
                             logger.error("Failed to send Slack notification for crawler id: ${crawler.id}", e)
+                            slackErrorDetails = e.message?.take(200)
                         }
+                        val durationMsSlack = Duration.between(slackNotificationStartTime, Instant.now()).toMillis()
+                        statisticsService.recordEvent(
+                            eventType = "SLACK_NOTIFICATION_ATTEMPT",
+                            targetUrl = crawler.slackChannelId,
+                            durationMs = durationMsSlack,
+                            isSuccess = slackSuccess,
+                            details = if(slackSuccess) "Message sent" else "Error: $slackErrorDetails"
+                        )
                     } else {
                         logger.warn("Slack channel ID is blank for crawler id: ${crawler.id}, notification type: ${crawler.notificationType}. Skipping Slack notification.")
+                        statisticsService.recordEvent(
+                            eventType = "SLACK_NOTIFICATION_ATTEMPT",
+                            targetUrl = crawler.slackChannelId,
+                            durationMs = 0,
+                            isSuccess = false,
+                            details = "Slack channel ID is blank"
+                        )
                     }
                 }
                 notificationSent = emailSent || slackSent
             }
             crawler.status = CrawlerStatus.ACTIVE
         } catch (e: Exception) {
+            success = false
             errorMessage = e.message?.take(490)
+            durationMsCrawl = Duration.between(startTime, Instant.now()).toMillis()
             crawler.markAsError(errorMessage)
-            logger.error("Error crawling crawler id: ${crawler.id}, url: ${crawler.url}", e)
+            logger.error("Error crawling crawler id: ${crawler.id}, url: ${crawler.url}, durationMs=$durationMsCrawl", e)
+        
+            statisticsService.recordEvent(
+                eventType = "CRAWL_ATTEMPT",
+                targetUrl = crawler.url,
+                durationMs = durationMsCrawl,
+                isSuccess = false,
+                details = "Error: $errorMessage"
+            )
         } finally {
-            crawlerRepository.save(crawler)
             val crawlLog = CrawlLog(
                 crawler = crawler,
                 crawledValue = crawledValue,
@@ -220,6 +284,7 @@ class CrawlerAppService(
                 notificationSent = notificationSent
             )
             crawlLogRepository.save(crawlLog)
+            crawlerRepository.save(crawler)
         }
     }
 

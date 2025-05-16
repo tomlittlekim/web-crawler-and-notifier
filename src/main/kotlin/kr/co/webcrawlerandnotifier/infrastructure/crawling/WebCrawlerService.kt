@@ -8,7 +8,7 @@ class WebCrawlerService {
     fun crawl(url: String, selector: String): String? {
         try {
             val doc = Jsoup.connect(url)
-                .timeout(10000) // 10초 타임아웃
+                .timeout(30000) // 10초 타임아웃
                 .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36") // User-Agent 설정
                 .get()
             val elements = doc.select(selector)

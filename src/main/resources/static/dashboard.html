@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>통계 대시보드 - 웹 크롤러 알리미</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- 기존 스타일 시트가 있다면 연결 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js CDN -->
+    <style>
+        body { font-family: sans-serif; margin: 20px; background-color: #f4f7f6; color: #333; }
+        header { background-color: #5DADE2; padding: 20px; color: white; text-align: center; margin-bottom: 30px; border-radius: 8px; }
+        nav { margin-bottom: 20px; text-align: center; }
+        nav a { margin: 0 15px; text-decoration: none; color: #5DADE2; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; }
+        .card { background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .card h2 { margin-top: 0; color: #2E86C1; border-bottom: 2px solid #AED6F1; padding-bottom: 10px;}
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { text-align: left; padding: 10px; border-bottom: 1px solid #ddd; }
+        th { background-color: #EBF5FB; }
+        .error-details { max-height: 100px; overflow-y: auto; font-size: 0.9em; background-color: #f9f9f9; padding: 5px; border-radius: 4px;}
+        .success { color: green; }
+        .failure { color: red; }
+        .percentage { font-weight: bold; }
+        #loading { text-align: center; padding: 50px; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>통계 대시보드</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">크롤러 관리</a>
+        <a href="dashboard.html">통계 대시보드</a>
+    </nav>
+
+    <div id="loading">데이터 로딩 중...</div>
+
+    <div class="container" id="dashboard-container" style="display:none;">
+        <div class="card" id="overall-stats-card">
+            <h2>전체 크롤링 현황 (CRAWL_ATTEMPT)</h2>
+            <div id="overall-stats-content"></div>
+        </div>
+
+        <div class="card" id="event-type-summary-card">
+            <h2>이벤트 유형별 요약</h2>
+            <canvas id="eventTypeChart" width="400" height="200"></canvas>
+            <div id="event-type-summary-table"></div>
+        </div>
+
+        <div class="card" id="recent-errors-card">
+            <h2>최근 오류 로그 (최대 10개)</h2>
+            <div id="recent-errors-content"></div>
+        </div>
+
+        <div class="card" id="url-stats-card">
+            <h2>URL별 크롤링 통계 (CRAWL_ATTEMPT)</h2>
+            <div id="url-stats-content"></div>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html> 

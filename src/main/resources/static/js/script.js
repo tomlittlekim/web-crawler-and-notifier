@@ -179,14 +179,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
       tr.innerHTML = `
         <td>${index + 1}</td>
-        <td>${crawler.url}</td>
-        <td>${crawler.selector}</td>
+        <td title="${crawler.url}">${crawler.url}</td>
+        <td title="${crawler.selector}">${crawler.selector}</td>
         <td>${Math.floor(crawler.checkInterval / 60000)} 분</td>
-        <td>${alertConditionText}</td>
+        <td title="${alertConditionText}">${alertConditionText}</td>
         <td>${notificationTypeText}</td> <!-- 알림 유형 표시 -->
-        <td>${crawler.slackChannelId || '-'}</td> <!-- Slack 채널 ID 표시 -->
+        <td title="${crawler.slackChannelId || '-'}">${crawler.slackChannelId || '-'}</td> <!-- Slack 채널 ID 표시 -->
         <td><span class="status-${crawler.status.toLowerCase()}">${statusText}</span></td>
-        <td>${crawler.lastCrawledValue || '-'}</td>
+        <td title="${crawler.lastCrawledValue || '-'}">${crawler.lastCrawledValue || '-'}</td>
         <td class="action-buttons">
             <button class="edit-btn action-button-edit">수정</button>
             <button class="delete-btn action-button-delete">삭제</button>

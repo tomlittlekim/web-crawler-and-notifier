@@ -4,8 +4,10 @@ plugins {
     kotlin("jvm") version "1.9.25" // 기존 버전 유지 또는 최신 안정 버전
     kotlin("plugin.spring") version "1.9.25" // 기존 버전 유지 또는 최신 안정 버전
     kotlin("plugin.jpa") version "1.9.25" // JPA 플러그인 추가
+    kotlin("kapt") version "1.9.25" // kotlin-kapt 플러그인 추가
     id("org.springframework.boot") version "3.4.5" // 기존 버전 유지 또는 최신 안정 버전
     id("io.spring.dependency-management") version "1.1.7" // 기존 버전 유지 또는 최신 안정 버전
+    id("com.ewerk.gradle.plugins.querydsl") version "1.0.10" // QueryDSL 플러그인 추가
 }
 
 group = "kr.co"
@@ -17,9 +19,18 @@ java {
     }
 }
 
+// QueryDSL 설정
+querydsl {
+    jpa = true
+    querydslSourcesDir = "build/generated/source/kapt/main" // 문자열 경로로 수정
+    library = "com.querydsl:querydsl-jpa:5.1.0:jakarta"
+}
+
 repositories {
     mavenCentral()
 }
+
+val queryDslVersion = "5.1.0"
 
 dependencies {
     // Spring Boot
@@ -41,6 +52,12 @@ dependencies {
     // Slack
     implementation("com.slack.api:slack-api-client:1.45.3")
 
+    // QueryDSL
+    implementation("com.querydsl:querydsl-jpa:${queryDslVersion}:jakarta")
+    kapt("com.querydsl:querydsl-apt:${queryDslVersion}:jakarta")
+    kapt("jakarta.annotation:jakarta.annotation-api")
+    kapt("jakarta.persistence:jakarta.persistence-api")
+
     // Test
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
@@ -51,6 +68,11 @@ kotlin {
     compilerOptions {
         freeCompilerArgs.addAll("-Xjsr305=strict")
     }
+}
+
+// compileKotlin 작업이 compileQuerydsl 작업에 의존하도록 설정
+tasks.named("compileKotlin", org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class.java) {
+    dependsOn(tasks.named("compileQuerydsl"))
 }
 
 tasks.withType<Test> {

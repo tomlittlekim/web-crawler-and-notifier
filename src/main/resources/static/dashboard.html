@@ -12,12 +12,18 @@
         nav { margin-bottom: 20px; text-align: center; }
         nav a { margin: 0 15px; text-decoration: none; color: #5DADE2; font-weight: bold; }
         nav a:hover { text-decoration: underline; }
-        .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; }
-        .card { background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .container { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        .card { background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); overflow-wrap: break-word; }
         .card h2 { margin-top: 0; color: #2E86C1; border-bottom: 2px solid #AED6F1; padding-bottom: 10px;}
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-        th, td { text-align: left; padding: 10px; border-bottom: 1px solid #ddd; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; table-layout: fixed; }
+        th, td { text-align: left; padding: 10px; border-bottom: 1px solid #ddd; overflow-wrap: break-word; word-break: break-all; }
         th { background-color: #EBF5FB; }
+        #overall-stats-content,
+        #event-type-summary-table,
+        #recent-errors-content,
+        #url-stats-content {
+            overflow-x: auto;
+        }
         .error-details { max-height: 100px; overflow-y: auto; font-size: 0.9em; background-color: #f9f9f9; padding: 5px; border-radius: 4px;}
         .success { color: green; }
         .failure { color: red; }

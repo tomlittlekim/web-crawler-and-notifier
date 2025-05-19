@@ -36,8 +36,10 @@
     * Spring Data JPA
     * Spring Mail (Gmail SMTP 사용)
     * Spring Validation
+    * Spring AMQP (RabbitMQ 연동)
 * Jsoup (`1.17.2`): HTML 파싱 라이브러리
 * Slack API Client (`com.slack.api:slack-api-client:1.45.3`): Slack 알림 연동
+* RabbitMQ: 메시지 큐
 
 ### 프론트엔드
 * HTML
@@ -52,17 +54,18 @@
 
 * `kr.co.webcrawlerandnotifier`: 루트 패키지
     * `application`: 애플리케이션 서비스 및 DTO (Data Transfer Objects)
-        * `dto`: `CrawlerRequest.kt`, `CrawlerResponse.kt` 등 API 요청/응답 객체
+        * `dto`: `CrawlerRequest.kt`, `CrawlerResponse.kt`, `CrawlingTaskMessage.kt` 등 API 요청/응답 객체 및 메시지 DTO
         * `service`: `CrawlerAppService.kt` 등 핵심 비즈니스 로직 처리
-    * `config`: 애플리케이션 설정 (`SchedulingConfig.kt` 등)
+    * `config`: 애플리케이션 설정 (`SchedulingConfig.kt`, `RabbitMQConfig.kt` 등)
     * `domain`: 도메인 모델, 리포지토리 인터페이스, 도메인 서비스, 예외
         * `model`: `Crawler.kt`, `CrawlLog.kt`, `CrawlerStatus.kt`, `NotificationType.kt` 등 핵심 엔티티
         * `repository`: `CrawlerRepository.kt`, `CrawlLogRepository.kt` 등 JPA 리포지토리 인터페이스
         * `exception`: `CrawlerNotFoundException.kt` 등 사용자 정의 예외
-    * `infrastructure`: 외부 시스템 연동 구현 (크롤링, 알림, 스케줄링)
+    * `infrastructure`: 외부 시스템 연동 구현 (크롤링, 알림, 스케줄링, 메시징)
         * `crawling`: `WebCrawlerService.kt` (Jsoup 기반 실제 크롤링 로직)
         * `notification`: `EmailNotificationService.kt`, `SlackNotificationService.kt` (Spring Mail 및 Slack API를 이용한 알림 발송 로직)
-        * `scheduler`: `CrawlerScheduler.kt` (등록된 크롤러 주기적 실행)
+        * `scheduler`: `CrawlerScheduler.kt` (주기적인 크롤링 작업 메시지 발행)
+        * `messaging`: `CrawlingMessageListener.kt` (RabbitMQ 메시지 수신 및 크롤링 작업 처리)
     * `presentation`: 외부 요청 처리 (API 컨트롤러, 예외 핸들러)
         * `controller`: `CrawlerController.kt`, `GlobalExceptionHandler.kt`
 * `resources`: 설정 파일 및 정적 리소스
@@ -71,15 +74,20 @@
 
 ## 실행 방법
 
-1.  **백엔드 실행:**
+1.  **선행 조건:**
+    * **RabbitMQ 서버 실행:** 크롤링 작업을 비동기적으로 처리하기 위해 RabbitMQ 서버가 실행 중이어야 합니다. (예: `localhost:5672`에서 실행)
+        * Docker 사용 시: `docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management`
+
+2.  **백엔드 실행:**
     * IDE (IntelliJ 등)에서 `WebCrawlerAndNotifierApplication.kt` 파일을 직접 실행합니다.
     * 또는 터미널에서 `./gradlew bootRun` (또는 `gradlew.bat bootRun`) 명령어를 실행합니다.
     * 기본 애플리케이션 포트는 `8080` 입니다 (별도 설정이 없는 경우 Spring Boot 기본값).
     * H2 데이터베이스 콘솔은 `http://localhost:8080/h2-console` 경로로 접속 가능합니다 (application.properties 설정 기준, JDBC URL: `jdbc:h2:file:./data/crawlerdb`, 사용자 이름: `sa`, 비밀번호: 없음).
     * **Slack 알림 설정:** Slack 알림을 사용하려면 `application.properties` 파일 또는 환경 변수를 통해 `slack.bot.token`을 설정해야 합니다.
     * **이메일 알림 설정:** 이메일 알림을 사용하려면 `application.properties` 파일 또는 환경 변수를 통해 `spring.mail.username`과 `spring.mail.password`를 설정해야 합니다.
+    * **RabbitMQ 연결 정보:** 필요한 경우 `application.properties` 파일에서 `spring.rabbitmq.*` 관련 설정을 수정합니다. (기본값: `localhost:5672`, `guest`/`guest`)
 
-2.  **프론트엔드 접속:**
+3.  **프론트엔드 접속:**
     * 웹 브라우저에서 `http://localhost:8080/` (또는 `static/index.html`이 제공되는 경로)으로 접속합니다.
 
 ## API 엔드포인트
@@ -100,4 +108,9 @@
 * 사용자 인증 및 권한 관리
 * 고급 크롤링 옵션 (JavaScript 렌더링 지원, 프록시 설정 등)
 * Docker를 이용한 배포 간소화
-* 스케줄링 로직 고도화 (예: 분산 환경 고려, DB 부하 분산)
+* **스케줄링 및 메시징 시스템 고도화:**
+    * 분산 환경에서의 안정적인 스케줄링 (예: ShedLock 등을 이용한 분산 락 적용)
+    * RabbitMQ Dead Letter Queue(DLQ) 설정 및 실패한 메시지 관리 방안 구체화
+    * 메시지 처리량 및 컨슈머 모니터링 시스템 구축
+    * DB 부하 분산을 위한 추가적인 전략 (예: 크롤링 작업의 우선순위 부여, 실행 간격 동적 조절 등)
+* 테스트 코드 커버리지 확대

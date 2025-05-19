@@ -38,6 +38,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-mail") // 메일 발송
     implementation("org.springframework.boot:spring-boot-starter-validation") // 유효성 검사
+    implementation("org.springframework.boot:spring-boot-starter-amqp") // RabbitMQ
 
     // Kotlin
     implementation("org.jetbrains.kotlin:kotlin-reflect")

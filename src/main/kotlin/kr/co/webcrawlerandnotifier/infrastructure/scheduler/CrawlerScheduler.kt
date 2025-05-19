@@ -1,9 +1,11 @@
 package kr.co.webcrawlerandnotifier.infrastructure.scheduler
 
-import kr.co.webcrawlerandnotifier.application.service.CrawlerAppService
+import kr.co.webcrawlerandnotifier.application.dto.CrawlingTaskMessage
+import kr.co.webcrawlerandnotifier.config.RabbitMQConfig
 import kr.co.webcrawlerandnotifier.domain.model.crawler.CrawlerStatus
 import kr.co.webcrawlerandnotifier.domain.repository.CrawlerRepository
 import org.slf4j.LoggerFactory
+import org.springframework.amqp.rabbit.core.RabbitTemplate
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Component
 import java.time.LocalDateTime
@@ -11,7 +13,7 @@ import java.time.LocalDateTime
 @Component
 class CrawlerScheduler(
     private val crawlerRepository: CrawlerRepository,
-    private val crawlerAppService: CrawlerAppService // 실제 크롤링 로직은 AppService에 위임
+    private val rabbitTemplate: RabbitTemplate
 ) {
     private val logger = LoggerFactory.getLogger(CrawlerScheduler::class.java)
 
@@ -28,18 +30,28 @@ class CrawlerScheduler(
         }
 
         activeCrawlers.forEach { crawler ->
-            val now = LocalDateTime.now()
-            val lastChecked = crawler.lastCheckedAt ?: now.minusSeconds(crawler.checkIntervalMs / 1000) // 최초 실행 또는 오래된 경우
+            // lastCheckedAt이 null인 경우 크롤러의 checkIntervalMs 만큼 과거 시간으로 설정하여 즉시 실행되도록 유도
+            // (checkIntervalMs가 Long 타입이므로 toLong()으로 변환)
+            val lastChecked = crawler.lastCheckedAt ?: LocalDateTime.now().minusNanos(crawler.checkIntervalMs * 1_000_000L)
 
-            if (lastChecked.plusNanos(crawler.checkIntervalMs * 1_000_000).isBefore(now)) {
-                logger.info("Scheduler: Triggering crawler id=${crawler.id}, url=${crawler.url}")
+            if (lastChecked.plusNanos(crawler.checkIntervalMs * 1_000_000L).isBefore(LocalDateTime.now())) {
+                logger.info("Scheduler: Publishing crawling task for crawler id=${crawler.id}, url=${crawler.url}")
                 try {
-                    // 비동기 실행 고려 (예: @Async 또는 별도 스레드 풀)
-                    // 여기서는 간단히 동기 호출
-                    crawlerAppService.executeCrawlingAndNotification(crawler)
+                    val message = CrawlingTaskMessage(crawlerId = crawler.id!!)
+                    rabbitTemplate.convertAndSend(
+                        RabbitMQConfig.CRAWLING_EXCHANGE_NAME,
+                        RabbitMQConfig.CRAWLING_ROUTING_KEY,
+                        message
+                    )
+                    // 메시지 발행 후 lastCheckedAt을 현재 시간으로 업데이트하여 중복 발행 방지
+                    // 실제 크롤링 성공/실패 여부와 관계없이 스케줄러는 발행 책임을 다한 것으로 간주
+                    // 실제 크롤링 후 상태 업데이트는 Consumer에서 처리
+                    crawler.lastCheckedAt = LocalDateTime.now() // lastCheckedAt 직접 업데이트
+                    crawlerRepository.save(crawler)
+
                 } catch (e: Exception) {
-                    logger.error("Error during scheduled execution of crawler id=${crawler.id}", e)
-                    // 여기서 crawler 상태를 ERROR로 변경할 수도 있으나, executeCrawlingAndNotification 내부에서 처리
+                    logger.error("Error publishing crawling task for crawler id=${crawler.id}", e)
+                    // 메시지 발행 실패 시 예외 처리 (예: 재시도 로직, 관리자 알림 등)
                 }
             }
         }

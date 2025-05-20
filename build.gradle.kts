@@ -63,6 +63,10 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+    // ShedLock for distributed scheduling
+    implementation("net.javacrumbs.shedlock:shedlock-spring:5.14.0")
+    implementation("net.javacrumbs.shedlock:shedlock-provider-jdbc-template:5.14.0")
 }
 
 kotlin {

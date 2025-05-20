@@ -9,6 +9,7 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Component
 import java.time.LocalDateTime
+import net.javacrumbs.shedlock.spring.annotation.SchedulerLock
 
 @Component
 class CrawlerScheduler(
@@ -20,6 +21,7 @@ class CrawlerScheduler(
     // 매 분마다 실행하여 주기가 도래한 크롤러들을 실행 (고정 지연 방식)
     // 실제 운영에서는 분산 환경, DB 부하 등을 고려하여 더 정교한 스케줄링 방식 필요
     @Scheduled(fixedDelayString = "60000") // 1분마다 (60 * 1000 ms)
+    @SchedulerLock(name = "scheduledCrawlingTasks", lockAtMostFor = "PT5M", lockAtLeastFor = "PT30S")
     fun scheduleCrawlingTasks() {
         logger.info("Running scheduled crawler tasks at ${LocalDateTime.now()}")
         val activeCrawlers = crawlerRepository.findAllByStatus(CrawlerStatus.ACTIVE)

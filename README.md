@@ -40,6 +40,7 @@
 * Jsoup (`1.17.2`): HTML 파싱 라이브러리
 * Slack API Client (`com.slack.api:slack-api-client:1.45.3`): Slack 알림 연동
 * RabbitMQ: 메시지 큐
+* ShedLock: 분산 스케줄링 잠금
 
 ### 프론트엔드
 * HTML
@@ -109,7 +110,6 @@
 * 고급 크롤링 옵션 (JavaScript 렌더링 지원, 프록시 설정 등)
 * Docker를 이용한 배포 간소화
 * **스케줄링 및 메시징 시스템 고도화:**
-    * 분산 환경에서의 안정적인 스케줄링 (예: ShedLock 등을 이용한 분산 락 적용)
     * RabbitMQ Dead Letter Queue(DLQ) 설정 및 실패한 메시지 관리 방안 구체화
     * 메시지 처리량 및 컨슈머 모니터링 시스템 구축
     * DB 부하 분산을 위한 추가적인 전략 (예: 크롤링 작업의 우선순위 부여, 실행 간격 동적 조절 등)

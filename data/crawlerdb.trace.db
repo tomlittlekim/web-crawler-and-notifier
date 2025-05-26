@@ -1,0 +1,390 @@
+2025-05-20 11:41:37.137908+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 11:41:37.142100+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 11:42:37.155708+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 11:42:37.166238+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 11:43:37.179118+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 11:43:37.183635+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 11:44:37.191620+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 11:44:37.194793+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 11:45:37.201197+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 11:45:37.205535+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 11:46:37.213150+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 11:46:37.215918+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 11:47:37.224641+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 11:47:37.228937+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 11:48:37.239320+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 11:48:37.245678+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 11:49:37.254797+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 11:49:37.257485+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 11:50:37.268950+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 11:50:37.273340+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 11:51:37.282423+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 11:51:37.286609+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 11:52:37.299370+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 11:52:37.306262+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 11:53:37.319378+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 11:53:37.322756+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 11:54:37.341285+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 11:54:37.347454+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 11:55:37.360607+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 11:55:37.363925+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 11:56:37.398334+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 11:56:37.401048+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 11:57:37.424952+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 11:57:37.432279+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 11:58:37.446674+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 11:58:37.450195+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 11:59:37.463030+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 11:59:37.469096+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:00:37.479514+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:00:37.481688+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:01:37.485651+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:01:37.487820+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:02:37.494360+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:02:37.501013+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:03:37.520564+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:03:37.527194+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:04:37.533661+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:04:37.536970+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:05:37.553475+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:05:37.560536+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:06:37.565881+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:06:37.569600+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:07:37.578765+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:07:37.587773+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:08:37.597405+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:08:37.600941+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:09:37.615102+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:09:37.620195+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:10:37.635503+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:10:37.641405+09:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:11:37.655119+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:11:37.657421+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:12:37.666888+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:12:37.670973+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:13:37.682098+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:13:37.688976+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:14:37.697259+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:14:37.702130+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:15:37.721008+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:15:37.727908+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:16:37.732079+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:16:37.734580+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:17:37.743132+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:17:37.747685+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:18:37.767257+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:18:37.774551+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:19:37.787986+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:19:37.792791+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:20:37.800621+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:20:37.805165+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:21:37.815605+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:21:37.818939+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:22:37.825532+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:22:37.828879+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:23:37.837978+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:23:37.841923+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:24:37.846401+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:24:37.849653+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:25:37.863875+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:25:37.865965+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:26:37.870635+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:26:37.876258+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:27:37.885530+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:27:37.889917+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:28:37.902041+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:28:37.905750+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:29:37.913665+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:29:37.917196+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:30:37.927454+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:30:37.931295+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:31:37.939901+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:31:37.945742+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:32:37.953584+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:32:37.958455+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:33:37.974632+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:33:37.981192+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:34:37.993069+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:34:37.996484+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:35:38.015981+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:35:38.023863+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:36:38.029272+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:36:38.032065+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:37:38.046951+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:37:38.053312+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:38:38.061215+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:38:38.064040+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:39:38.076954+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:39:38.080404+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:40:38.093331+09:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:40:38.099560+09:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:41:38.108006+09:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:41:38.111947+09:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:42:38.130573+09:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:42:38.136273+09:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:43:38.151144+09:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:43:38.154533+09:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 12:59:57.931904+09:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 12:59:57.946036+09:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
+2025-05-20 13:00:57.952546+09:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+INSERT INTO shedlock(name, lock_until, locked_at, locked_by) VALUES(?, TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), CURRENT_TIMESTAMP(3), ?) [42102-232]
+2025-05-20 13:00:57.957359+09:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHEDLOCK" not found; SQL statement:
+UPDATE shedlock SET lock_until = TIMESTAMPADD(MICROSECOND, ?, CURRENT_TIMESTAMP(3)), locked_at = CURRENT_TIMESTAMP(3), locked_by = ? WHERE name = ? AND lock_until <= CURRENT_TIMESTAMP(3) [42102-232]
